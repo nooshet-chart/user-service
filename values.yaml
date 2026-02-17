@@ -1,16 +1,13 @@
 # Default values for the User Service Helm chart
 
 replicaCount: 1
-
 image:
   repository: nooshet/user-service
-  tag: latest
+  tag: development-ae7a45f
   pullPolicy: IfNotPresent
-
 service:
   type: ClusterIP
   port: 80
-
 ingress:
   enabled: true
   annotations: {}
@@ -20,7 +17,5 @@ ingress:
         - path: /
           pathType: ImplementationSpecific
   tls: []
-
 resources: {}
-
 autossl: {}
