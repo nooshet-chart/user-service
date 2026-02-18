@@ -39,3 +39,12 @@ database:
 redis:
   host: "redis"
   port: "6379"
+env:
+  JWT_SECRET: "change-me-in-prod"
+  JWT_ISSUER: "nooshet"
+  SPRING_PROFILES_ACTIVE: "dev"
+  REDIS_HOST: "redis"
+  REDIS_PORT: "6379"
+  REDIS_TIMEOUT: "2000ms"
+  IDENTITY_SERVICE_URL: "http://identity-service:8080"
+  JAVA_OPTS: "-XX:TieredStopAtLevel=1 -Xss256k -Xmx448m"
