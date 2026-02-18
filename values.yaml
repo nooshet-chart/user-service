@@ -19,8 +19,3 @@ ingress:
   tls: []
 resources: {}
 autossl: {}
-
-istio:
-  enabled: false
-  authorization:
-    internalCallers: []
