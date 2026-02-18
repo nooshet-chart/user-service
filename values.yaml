@@ -3,7 +3,7 @@
 replicaCount: 1
 image:
   repository: ghcr.io/nooshet-backend/user-service
-  tag: development-c592859
+  tag: development-4b14ae1
   pullPolicy: IfNotPresent
   imagePullSecrets:
     - name: ghcr-secret
@@ -21,19 +21,15 @@ ingress:
   tls: []
 resources: {}
 autossl: {}
-
 istio:
   enabled: true
-
 apiGatewayFullname: "api-gateway"
-
 database:
   host: postgresql-user
   port: 5432
   name: nooshet_user
   user: nooshet_user
   password: user_password_123
-
 redis:
   host: redis
   port: 6379
