@@ -2,7 +2,7 @@
 
 replicaCount: 1
 image:
-  repository: nooshet/user-service
+  repository: ghcr.io/nooshet-backend/user-service
   tag: development-ae7a45f
   pullPolicy: IfNotPresent
 service:
