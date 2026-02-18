@@ -10,5 +10,4 @@ spec:
   rules:
     - from:
         - source:
-            principals: {{ toYaml .Values.istio.authorization.internalCallers }}
-
+            principals: {{- if and .Values.istio (hasKey .Values.istio "authorization") (hasKey .Values.istio.authorization "internalCallers") }}{{ toYaml .Values.istio.authorization.internalCallers }}{{ else }}[]{{ end }}

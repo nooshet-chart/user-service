@@ -22,3 +22,5 @@ autossl: {}
 
 istio:
   enabled: false
+  authorization:
+    internalCallers: []
