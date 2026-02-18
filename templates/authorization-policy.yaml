@@ -1,8 +1,8 @@
 apiVersion: security.istio.io/v1beta1
 kind: AuthorizationPolicy
 metadata:
-  name: "{{ include "user-service.fullname" . }}-auth-policy"
-  namespace: "{{ .Release.Namespace }}"
+  name: '{{ include "user-service.fullname" . }}-auth-policy'
+  namespace: '{{ .Release.Namespace }}'
 spec:
   selector:
     matchLabels:
