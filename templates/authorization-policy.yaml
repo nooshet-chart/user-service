@@ -1,1 +1,3 @@
 # Istio AuthorizationPolicy removed as user-service will not use Istio
+
+# File intentionally left blank. AuthorizationPolicy for user-service has been fully removed as Istio is not used for this service.

@@ -14,9 +14,6 @@ spec:
       labels:
         {{- include "user-service.selectorLabels" . | nindent 8 }}
       annotations:
-        {{- if and .Values.istio (hasKey .Values.istio "enabled") .Values.istio.enabled }}
-        sidecar.istio.io/inject: "true"
-        {{- end }}
     spec:
       serviceAccountName: {{ include "user-service.fullname" . }}
       {{- with .Values.image.imagePullSecrets }}
