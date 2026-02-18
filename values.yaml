@@ -21,3 +21,6 @@ ingress:
   tls: []
 resources: {}
 autossl: {}
+
+istio:
+  enabled: true

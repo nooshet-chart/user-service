@@ -1,3 +1,19 @@
-# Istio AuthorizationPolicy removed as user-service will not use Istio
-
-# File intentionally left blank. AuthorizationPolicy for user-service has been fully removed as Istio is not used for this service.
+apiVersion: security.istio.io/v1beta1
+kind: AuthorizationPolicy
+metadata:
+  name: {{ include "user-service.fullname" . }}-auth-policy
+  namespace: {{ .Release.Namespace }}
+spec:
+  selector:
+    matchLabels:
+      {{- include "user-service.selectorLabels" . | nindent 6 }}
+  action: ALLOW
+  rules:
+  - from:
+    - source:
+        principals:
+        # Allow traffic from the API Gateway
+        - "cluster.local/ns/{{ .Release.Namespace }}/sa/{{ .Values.startApiGatewayFullname | default "api-gateway" }}"
+        # Allow traffic from other services in the mesh (e.g., identity-service if it calls user-service)
+        # Adjust as needed for specific service-to-service communication
+        - "cluster.local/ns/{{ .Release.Namespace }}/sa/*"
