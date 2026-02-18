@@ -19,7 +19,13 @@ ingress:
         - path: /
           pathType: ImplementationSpecific
   tls: []
-resources: {}
+resources:
+  limits:
+    memory: 512Mi
+    cpu: 500m
+  requests:
+    cpu: 250m
+    memory: 256Mi
 autossl: {}
 istio:
   enabled: true
