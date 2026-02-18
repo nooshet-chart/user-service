@@ -24,3 +24,5 @@ autossl: {}
 
 istio:
   enabled: true
+
+apiGatewayFullname: "api-gateway"
