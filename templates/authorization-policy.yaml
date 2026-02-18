@@ -8,11 +8,11 @@ spec:
       {{- include "user-service.selectorLabels" . | nindent 6 }}
   action: ALLOW
   rules:
+{{- if and .Values.istio (hasKey .Values.istio "authorization") (hasKey .Values.istio.authorization "internalCallers") (gt (len .Values.istio.authorization.internalCallers) 0) }}
     - from:
         - source:
-            {{- if and .Values.istio (hasKey .Values.istio "authorization") (hasKey .Values.istio.authorization "internalCallers") }}
             principals:
-              {{- toYaml .Values.istio.authorization.internalCallers | nindent 14 }}
-            {{- else }}
-            principals: []
-            {{- end }}
+{{- toYaml .Values.istio.authorization.internalCallers | nindent 14 }}
+{{- else }}
+    - {}
+{{- end }}
