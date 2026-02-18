@@ -31,5 +31,5 @@ database:
   user: nooshet_user
   password: user_password_123
 redis:
-  host: redis
-  port: 6379
+  host: "redis"
+  port: "6379"

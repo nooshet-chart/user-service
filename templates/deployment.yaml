@@ -48,9 +48,9 @@ spec:
             value: {{ .Values.database.user | quote }}
           - name: DB_PASSWORD
             value: {{ .Values.database.password | quote }}
-          - name: REDIS_HOST
+          - name: SPRING_REDIS_HOST
             value: {{ .Values.redis.host | quote }}
-          - name: REDIS_PORT
+          - name: SPRING_REDIS_PORT
             value: {{ .Values.redis.port | quote }}
         resources:
           {{- toYaml .Values.resources | nindent 10 }}
