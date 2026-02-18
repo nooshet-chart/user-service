@@ -13,7 +13,7 @@ spec:
     - source:
         principals:
         # Allow traffic from the API Gateway
-        - "cluster.local/ns/{{ .Release.Namespace }}/sa/{{ .Values.apiGatewayFullname | default 'api-gateway' }}"
+        - "cluster.local/ns/{{ .Release.Namespace }}/sa/{{ default "api-gateway" .Values.apiGatewayFullname }}"
         # Allow traffic from other services in the mesh (e.g., identity-service if it calls user-service)
         # Adjust as needed for specific service-to-service communication
         - "cluster.local/ns/{{ .Release.Namespace }}/sa/*"
