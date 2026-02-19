@@ -40,7 +40,7 @@ redis:
   host: "redis"
   port: "6379"
 env:
-  JWT_SECRET: "change-me-in-prod"
+  JWT_SECRET: "change-me-in-prod-please-use-a-longer-secret-key-123456"
   JWT_ISSUER: "nooshet"
   SPRING_PROFILES_ACTIVE: "dev"
   REDIS_HOST: "redis"
