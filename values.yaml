@@ -3,7 +3,7 @@
 replicaCount: 1
 image:
   repository: ghcr.io/nooshet-backend/user-service
-  tag: development-957fe32
+  tag: development-4ab8a31
   pullPolicy: IfNotPresent
   imagePullSecrets:
     - name: ghcr-secret
